@@ -17,22 +17,24 @@ public class Main {
         o.agregarVertice(new Nodo(5));
         o.agregarVertice(new Nodo(7));
         o.agregarVertice(new Nodo(9));
+
+        // Elimina las llamadas duplicadas
         o.agregarArista(1, 4);
-        o.agregarArista(4, 1);
         o.agregarArista(5, 1);
-        o.agregarArista(1, 5);
         o.agregarArista(7, 9);
-        o.agregarArista(9, 7);
         o.agregarArista(7, 5);
-        o.agregarArista(5, 7);
         o.agregarArista(4, 9);
-        o.agregarArista(9, 4);
 
+        System.out.println("\nGrafo inicial:");
         o.mostrarGrafo();
+
+        System.out.println("\nEliminando arista 1-4:");
         o.eliminarArista(1, 4);
+
+        System.out.println("\nEliminando vértice 1:");
         o.eliminarVertice(1);
+
+        System.out.println("\nGrafo final:");
         o.mostrarGrafo();
-
-
     }
 }
