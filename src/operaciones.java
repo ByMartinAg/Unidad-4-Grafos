@@ -2,11 +2,9 @@ import java.util.*;
 
 public class operaciones {
     private final Map<Integer, List<Integer>> grafo;
-    private final Map<Integer, Integer> pesos;
 
     public operaciones(){
-        grafo = new HashMap<>();
-        pesos = new HashMap<>();
+        grafo = new HashMap<>();;
     }
 
     // agregar vertice
