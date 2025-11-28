@@ -67,6 +67,7 @@ public class Main {
                     break;
                 case 7:
                     System.out.println("Fin del programa");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Opcion no valida");
@@ -78,3 +79,4 @@ public class Main {
 
 // v= {1,2,3,4,5,6}
 // a= {(1,2),(1,3),(2,4),(2,5),(3,6),(4,5)}
+git

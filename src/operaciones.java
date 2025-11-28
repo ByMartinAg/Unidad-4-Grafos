@@ -136,7 +136,6 @@ public class operaciones {
 
         if (distanciaFinal == Integer.MAX_VALUE) {
             System.out.println("No existe camino entre " + inicio + " y " + destino);
-            System.out.println("==============================\n");
             return;
         }
 
