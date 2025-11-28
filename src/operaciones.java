@@ -46,7 +46,6 @@ public class operaciones {
     }
 
     // eliminar arista
-
     public void eliminarArista(int origen, int destino){
         if (grafo.containsKey(origen) && grafo.containsKey(destino)){
             grafo.get(origen).remove(Integer.valueOf(destino));
@@ -73,18 +72,19 @@ public class operaciones {
 
     // algoritmo de Dijkstra
     public void dijkstra(int inicio, int destino) {
+        // verificamos que los vertices existan
         if (!grafo.containsKey(inicio) || !grafo.containsKey(destino)) {
             System.out.println("Vertice de inicio o destino no existe");
             return;
         }
 
-        // Mapa de distancias (todas las aristas tienen peso 1)
+        // Mapa de distancias todas las aristas van a valer 1
         Map<Integer, Integer> distancias = new HashMap<>();
-        // Mapa de predecesores para reconstruir el camino
+        // Mapa de predecesores para reconstruir el camino y poder re armarlo nuevamente
         Map<Integer, Integer> predecesores = new HashMap<>();
-        // Conjunto de vertices visitados
+        // Son los vertices visitados
         HashSet<Integer> visitados = new HashSet<>();
-        // Cola de prioridad (vertice, distancia)
+        // Cola de prioridad para el vertice y la distancia)
         PriorityQueue<int[]> cola = new PriorityQueue<>((a, b) -> a[1] - b[1]);
 
         // Inicializar distancias
@@ -129,7 +129,7 @@ public class operaciones {
         }
 
         // MOSTRAR RESULTADOS
-        System.out.println("\n=== ALGORITMO DE DIJKSTRA ===");
+        System.out.println("\nALGORITMO DE DIJKSTRA PARA LA RUTA MAS CORTA");
         System.out.println("Origen: " + inicio + " | Destino: " + destino);
 
         int distanciaFinal = distancias.get(destino);
@@ -138,7 +138,6 @@ public class operaciones {
             System.out.println("No existe camino entre " + inicio + " y " + destino);
             return;
         }
-
         // Reconstruir camino
         List<Integer> camino = new ArrayList<>();
         int actual = destino;
@@ -161,7 +160,6 @@ public class operaciones {
                 System.out.print(" -> ");
             }
         }
-        System.out.println("\n==============================\n");
     }
 
 }

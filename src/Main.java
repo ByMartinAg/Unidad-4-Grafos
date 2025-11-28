@@ -1,24 +1,16 @@
-// v= (1,4,5,7,9)
-// a= {(1-4),(4-1),(5-1),(1-5),(7-9),(9-7),(7-5),(5-7),(4-9),(9-4)}.
-
-// Segundo ejemplo
-// V=(c,d,e,f,h)
-// y de los arcos
-// A= {(C,D), (D,F), (E,H),(H,E) ,(E,C)}
-// FORMA DEL GRAFO DIRIGIDO G={V,A}
-
 import java.util.Scanner;
-
-// añadir arco, borrar arco, añadir arista, borrar arista,
+// cosas que tiene que hacer el programa
+// añadir arco, borrar arco, añadir arista, borrar arista
 public class Main {
 
     public static void main(String[] args) {
+        // variables y objeto
         Scanner teclado = new Scanner(System.in);
         operaciones grafito = new operaciones();
-
         int opcion;
-
+        // ciclo para el uso del programa
         do{
+            // Es el menu del programa para elegir lo que hace
             System.out.println("\nMENU");
             System.out.println("1. Agregar vertice");
             System.out.println("2. Agregar arista");
@@ -31,52 +23,51 @@ public class Main {
             opcion = teclado.nextInt();
 
             switch (opcion){
-                case 1:
+                case 1: // Agrega un vertice
                     System.out.println("Ingresa el dato del vertice");
                     int vertice = teclado.nextInt();
                     grafito.agregarVertice(new Nodo(vertice));
                     break;
-                case 2:
+                case 2: // agrega una arista
                     System.out.println("Ingresa el origen");
                     int origen = teclado.nextInt();
                     System.out.println("Ingresa el destino");
                     int destino = teclado.nextInt();
                     grafito.agregarArista(origen, destino);
                     break;
-                case 3:
+                case 3: // elimina el vertice
                     System.out.println("Ingresa el vertice a eliminar");
                     int verticeEliminar = teclado.nextInt();
                     grafito.eliminarVertice(verticeEliminar);
                     break;
-                case 4:
+                case 4: // elimina una arista
                     System.out.println("Ingresa el origen");
                     int origenEliminar = teclado.nextInt();
                     System.out.println("Ingresa el destino");
                     int destinoEliminar = teclado.nextInt();
                     grafito.eliminarArista(origenEliminar, destinoEliminar);
                     break;
-                case 5:
+                case 5: // muestra el grafo
                     grafito.mostrar();
                     break;
-                case 6:
+                case 6: // algoritmo de la ruta mas corta con dijkstra
                     System.out.println("Ingresa el origen");
                     int origenAlgortimo = teclado.nextInt();
                     System.out.println("Ingresa el destino");
                     int destinoAlgoritmo = teclado.nextInt();
                     grafito.dijkstra(origenAlgortimo, destinoAlgoritmo);
                     break;
-                case 7:
+                case 7: // sale del programa
                     System.out.println("Fin del programa");
                     System.exit(0);
                     break;
-                default:
+                default: // en caso de que ninguna sea la que se eligio
                     System.out.println("Opcion no valida");
                     break;
             }
-        }while (opcion != 6);
+        }while (opcion != 6); // finaliza el programa en la salida.
     }
 }
 
 // v= {1,2,3,4,5,6}
 // a= {(1,2),(1,3),(2,4),(2,5),(3,6),(4,5)}
-git
